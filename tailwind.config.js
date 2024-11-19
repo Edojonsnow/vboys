@@ -10,6 +10,19 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        bg: "var(--color-bg)",
+      },
+      fontFamily: {
+        helv: ["var(--font-helv)"],
+      },
+      width: {
+        mobile: "375px",
+      },
+      fontSize: {
+        h2: "40px",
+        h3: "30px",
+        h4: "20px",
+        p: "18px",
       },
     },
   },
