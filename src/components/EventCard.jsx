@@ -36,9 +36,9 @@ const EventCard = ({ eventTitle, date, location, ticketLink }) => {
           <video
             ref={videoRef}
             playsInline
-            loop
             width="1000"
             height="400"
+            muted
             controls={false} // Removes the controls
             preload="auto"
           >

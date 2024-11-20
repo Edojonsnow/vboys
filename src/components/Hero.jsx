@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <div>
-      <div className="w-full h-[500px] relative flex justify-center">
+      <div className="w-full h-[600px] relative flex justify-center">
         {/* <Image
           className="object-cover"
           src="/newHero.jpg"
@@ -27,9 +27,8 @@ const Hero = () => {
         /> */}
         <video
           ref={videoRef}
-          className=" object-cover"
+          className=" object-cover  lg:object-fill"
           width="1440"
-          height="400"
           playsInline
           loop
           controls={false} // Removes the controls

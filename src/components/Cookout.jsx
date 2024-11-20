@@ -1,13 +1,38 @@
 "use client";
+import { client, urlFor } from "@/sanity/lib/client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { IMAGE_QUERY } from "@/sanity/lib/queries";
 
 const Cookout = () => {
   const [currentItem, setCurrentItem] = useState(0);
+  const [bannerImage, setBannerImage] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleClick = () => {
     setCurrentItem((prevItem) => (prevItem === 0 ? 1 : 0));
   };
+
+  useEffect(() => {
+    const fetchBannerImage = async () => {
+      try {
+        // Fetch specific image
+        const image = await client.fetch(IMAGE_QUERY, {
+          slug: "we-go-again",
+        });
+        setBannerImage(image);
+      } catch (error) {
+        console.error("Error fetching banner:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchBannerImage();
+  }, []);
+  if (isLoading) return <div>Loading...</div>;
+  if (!bannerImage)
+    return <div className="text-white">No banner image found</div>;
 
   const items = [
     {
@@ -29,9 +54,9 @@ const Cookout = () => {
     <div className="relative h-fit mt-4">
       <div className=" w-full h-[500px] relative">
         <Image
-          className="object-cover object-top"
-          src={currentItem == 0 ? "/ib-header.jpg" : "/DUN_8034.jpg"}
-          alt="hero-image"
+          src={urlFor(bannerImage.mainImage).url()}
+          alt={bannerImage.title}
+          className=" object-cover object-top"
           fill
         />
       </div>
