@@ -26,12 +26,12 @@ const EventCard = ({ eventTitle, date, location, ticketLink }) => {
   };
 
   return (
-    <div
-      className="w-fit"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="relative w-[342px] h-[400px] ">
+    <div className="w-fit">
+      <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="relative w-[342px] h-[400px] "
+      >
         {isHovering ? (
           <video
             ref={videoRef}
@@ -55,13 +55,13 @@ const EventCard = ({ eventTitle, date, location, ticketLink }) => {
       </div>
       <div className="flex justify-between">
         <h3 className="text-white">{eventTitle}</h3>
-        <div className="flex gap-2">
+        <div className="flex cursor-pointer gap-2">
           <IconTicket stroke={2} color="#faed25" />
           <p className="text-bg">Ticket</p>
         </div>
       </div>
       <div className=" flex flex-col gap-0">
-        <p className="text-white"> {date}</p>
+        <p className="text-bg"> {date}</p>
         <div className="flex">
           <IconMapPin stroke={2} color="#faed25" />
           <p className="text-white"> {location}</p>

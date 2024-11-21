@@ -9,6 +9,8 @@ const Cookout = () => {
   const [bannerImage, setBannerImage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const currentSlug = currentItem == 0 ? "we-go-again" : "summer-cookout";
+
   const handleClick = () => {
     setCurrentItem((prevItem) => (prevItem === 0 ? 1 : 0));
   };
@@ -18,7 +20,7 @@ const Cookout = () => {
       try {
         // Fetch specific image
         const image = await client.fetch(IMAGE_QUERY, {
-          slug: "we-go-again",
+          slug: currentSlug,
         });
         setBannerImage(image);
       } catch (error) {
@@ -29,7 +31,7 @@ const Cookout = () => {
     };
 
     fetchBannerImage();
-  }, []);
+  }, [currentSlug]);
   if (isLoading) return <div>Loading...</div>;
   if (!bannerImage)
     return <div className="text-white">No banner image found</div>;

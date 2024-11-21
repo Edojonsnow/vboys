@@ -18,7 +18,10 @@ const Events = () => {
           <h1 className="text-white"> UPCOMING EVENTS</h1>
           <EmblaCarousel />
         </div>
-        <VbVirtual />
+        <VbVirtual
+          imageSrc="/footer-pic.png"
+          mobileSrc="/vbvirtual-mobile.svg"
+        />
         <Footer />
       </div>
     </div>

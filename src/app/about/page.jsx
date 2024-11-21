@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
+import VbVirtual from "@/components/VbVirtual";
 import Image from "next/image";
 import React from "react";
 
@@ -8,7 +9,7 @@ const About = () => {
   return (
     <div>
       <Nav />
-      <Hero />
+      <Hero hideVideo="none" />
       <div className=" bg-white flex justify-around items-center py-10">
         <div className="w-[550px] ">
           <p className=" text-lg lg:px-0 text-justify  px-5 lg:text-[24px] font-semibold">
@@ -42,6 +43,10 @@ const About = () => {
           />
         </div>
       </div>
+      <VbVirtual
+        imageSrc="/footer-pic.png"
+        mobileSrc="/vbvirtualblue-mobile.svg"
+      />
       <Footer />
     </div>
   );
