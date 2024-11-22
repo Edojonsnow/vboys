@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       <Cookout />
       <Events />
-      <VbVirtual />
+      <VbVirtual imageSrc="/footer-pic.png" mobileSrc="/vbvirtual-mobile.svg" />
       <Footer />
     </div>
   );
