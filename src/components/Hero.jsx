@@ -53,7 +53,7 @@ const Hero = ({ hideVideo }) => {
           />
         )}
 
-        <video
+        {/* <video
           ref={videoRef}
           className=" object-contain "
           playsInline
@@ -63,15 +63,15 @@ const Hero = ({ hideVideo }) => {
           style={{ display: hideVideo }}
         >
           <source src="/videos/vb-hero-vid.MOV" type="video/mp4" />
-        </video>
+        </video> */}
 
-        <button
+        {/* <button
           onClick={() => setIsClicked(!isClicked)}
           className="absolute top-40 font-helv cursor-pointer rounded-2xl bg-bg p-5 hover:scale-110 hover:bg-black hover:text-bg transition-all duration-300"
           style={{ display: hideVideo }}
         >
           {!isClicked ? "CLICK ME" : "STOP PLAYBACK"}
-        </button>
+        </button> */}
       </div>
     </div>
   );
