@@ -3,6 +3,7 @@ import { client, urlFor } from "@/sanity/lib/client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { IMAGE_QUERY } from "@/sanity/lib/queries";
+import Link from "next/link";
 
 const Cookout = () => {
   const [currentItem, setCurrentItem] = useState(0);
@@ -38,10 +39,10 @@ const Cookout = () => {
 
   const items = [
     {
-      title: " DIRTY, SEXY RAVE RETURNS 30TH AUGUST! ",
+      title: " DIRTY, SEXY RAVE RETURNS 30TH NOVEMBER! ",
       description: " Limited free tickets for the sexiest ravers only. RSVP ",
       button: "RSVP",
-      link: "https://tix.africa/vbdsr",
+      link: "https://tix.africa/dsr",
     },
     {
       title: " SUMMER COOKOUT GOES ON A 5-CITY TOUR!",
@@ -66,9 +67,20 @@ const Cookout = () => {
       <div className=" w-4/5 lg:w-[432px] flex flex-col gap-4 items-start h-fit rounded-2xl p-8  bg-bg absolute top-1/4 left-10">
         <h2 className="font-helv">{items[currentItem].title}</h2>
         <p>{items[currentItem].description}</p>
-        <button className="bg-white p-3 rounded-2xl">
-          {items[currentItem].button}
-        </button>
+        {currentItem == 0 ? (
+          <Link href={items[currentItem].link}>
+            <button className="bg-white p-3 rounded-2xl">
+              {items[currentItem].button}
+            </button>
+          </Link>
+        ) : (
+          <button
+            onClick={() => window.scrollTo({ top: 2500, behavior: "smooth" })}
+            className="bg-white p-3 rounded-2xl"
+          >
+            {items[currentItem].button}
+          </button>
+        )}
       </div>
 
       <button

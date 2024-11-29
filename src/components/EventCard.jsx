@@ -51,7 +51,7 @@ const EventCard = ({
             preload="auto"
             style={{ display: hideVideo }}
           >
-            <source src="/vogue-vid1.MP4" type="video/mp4" />
+            <source src="/videos/vogue-vid1.MP4" type="video/mp4" />
           </video>
         ) : (
           <Image className="object-fit" src={imageSrc} alt="event image" fill />

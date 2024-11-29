@@ -66,6 +66,7 @@ const PastCarousel = (props) => {
               location={event.location}
               imageSrc={event.imageSrc}
               hideVideo={event.hideVideo}
+              ticketLink={event.ticketLink}
             />
           ))}
         </div>

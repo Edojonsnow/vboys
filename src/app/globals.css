@@ -65,3 +65,13 @@ h1 {
     transform: rotate(360deg);
   }
 }
+
+.mailchimp {
+  --webkit-border-radius: 8px !important;
+  border-radius: 8px !important;
+  outline: none !important;
+  border: none !important;
+}
+.mailchimp-margin {
+  margin: 0 !important;
+}

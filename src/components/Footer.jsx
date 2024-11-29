@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import MailchimpForm from "./MailChimpForm";
 
 const Footer = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(null);
@@ -24,6 +25,17 @@ const Footer = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <div className="  ">
       <div className="relative mt-4 w-full  h-[921px] md:h-[250px]">
@@ -36,7 +48,8 @@ const Footer = () => {
       </div>
       <div className="flex lg:flex-row flex-col gap-4  py-4 mx-8 items-center justify-between">
         <div className="flex gap-4 flex-col ">
-          <form
+          <MailchimpForm />
+          {/* <form
             action="https://instagram.us21.list-manage.com/subscribe/post?u=8948ce36ffa9598bbdce03c53&amp;id=c62a4d6fa6&amp;f_id=00e3ffe6f0"
             method="post"
             id="mc-embedded-subscribe-form"
@@ -67,7 +80,7 @@ const Footer = () => {
                 </p>
               )}
             </div>
-          </form>
+          </form> */}
           <div className="flex justify-center lg:justify-start  gap-4">
             <Link className="text-bg" href="/events">
               EVENTS
