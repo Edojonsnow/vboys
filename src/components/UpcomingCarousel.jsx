@@ -5,7 +5,7 @@ import { PrevButton, NextButton, usePrevNextButtons } from "./CarouselArrow";
 import useEmblaCarousel from "embla-carousel-react";
 import EventCard from "./EventCard";
 
-const EmblaCarousel = (props) => {
+const UpcomingCarousel = (props) => {
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
@@ -34,30 +34,6 @@ const EmblaCarousel = (props) => {
       location: "Harbour Point, VI, Lagos",
       ticketLink: "https://example.com/ticket",
       imageSrc: "/streetsouk_vogueboys.jpeg",
-      hideVideo: "none",
-    },
-    {
-      title: "Easter Cookout",
-      date: "10th April, 2023",
-      location: "Amore Gardens, Lagos",
-      ticketLink: "https://example.com/ticket",
-      imageSrc: "/easter_cookout.jpeg",
-      hideVideo: "",
-    },
-    {
-      title: "We Go Again 2023",
-      date: "7th January, 2023",
-      location: "Secret Beach, Lagos",
-      ticketLink: "https://example.com/ticket",
-      imageSrc: "/wegoagain.jpeg",
-      hideVideo: "none",
-    },
-    {
-      title: "Silent Rage: Street Souk",
-      date: "18th December, 2022",
-      location: "Harbour Point, VI, Lagos",
-      ticketLink: "https://example.com/ticket",
-      imageSrc: "/tix_5.png",
       hideVideo: "none",
     },
   ];
@@ -116,4 +92,4 @@ const EmblaCarousel = (props) => {
   );
 };
 
-export default EmblaCarousel;
+export default UpcomingCarousel;

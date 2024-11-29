@@ -9,7 +9,7 @@ const Events = () => {
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   return (
     <div className="mt-4 px-4">
-      <h1 className="text-white">EVENTS</h1>
+      <h1 className="text-white"> EVENTS</h1>
       {/* <p>Upcoming events and cookouts</p> */}
       <div className=" flex gap-4 ">
         <EmblaCarousel slides={SLIDES} options={OPTIONS} />
