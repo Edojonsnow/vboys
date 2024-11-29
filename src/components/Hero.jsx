@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import VideoJS from "./Video";
+import videojs from "video.js";
 
 const Hero = ({ hideVideo }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -8,13 +10,46 @@ const Hero = ({ hideVideo }) => {
 
   const videoRef = useRef(null);
 
-  useEffect(() => {
+  const playerRef = React.useRef(null);
+
+  const videoJsOptions = {
+    autoplay: true,
+    controls: false,
+    responsive: true,
+    fluid: true,
+    sources: [
+      {
+        src: "/vb-hero-vid.MOV",
+        type: "video/mp4",
+      },
+    ],
+  };
+
+  const handlePlayerReady = (player) => {
+    playerRef.current = player;
     if (isClicked) {
-      videoRef.current.play();
+      player.play();
     } else {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+      player.pause();
     }
+
+    // You can handle player events here, for example:
+    player.on("waiting", () => {
+      videojs.log("player is waiting");
+    });
+
+    player.on("dispose", () => {
+      videojs.log("player will dispose");
+    });
+  };
+
+  useEffect(() => {
+    // if (isClicked) {
+    //   videoRef.current.play();
+    // } else {
+    //   videoRef.current.pause();
+    //   videoRef.current.currentTime = 0;
+    // }
 
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 430);
@@ -52,18 +87,15 @@ const Hero = ({ hideVideo }) => {
             fill
           />
         )}
-        <video
-          ref={videoRef}
-          className=" object-cover "
-          width="1440"
-          playsInline
-          loop
-          controls={false} // Removes the controls
-          preload="auto"
-          style={{ display: hideVideo }}
-        >
-          <source src="/vb-hero-vid.MOV" type="video/mp4" />
-        </video>
+        {isClicked && (
+          <VideoJS
+            options={videoJsOptions}
+            onReady={handlePlayerReady}
+            style={{ display: hideVideo }}
+          />
+        )}
+        {/* <source src="/vb-hero-vid.MOV" type="video/mp4" /> */}
+
         <button
           onClick={() => setIsClicked(!isClicked)}
           className="absolute top-40 font-helv cursor-pointer rounded-2xl bg-bg p-5 hover:scale-110 hover:bg-black hover:text-bg transition-all duration-300"
