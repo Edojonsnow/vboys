@@ -9,12 +9,12 @@ const Hero = ({ hideVideo }) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    if (isClicked) {
-      videoRef.current.play();
-    } else {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
+    // if (isClicked) {
+    //   videoRef.current.play();
+    // } else {
+    //   videoRef.current.pause();
+    //   videoRef.current.currentTime = 0;
+    // }
 
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 430);
