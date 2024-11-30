@@ -41,18 +41,25 @@ const EventCard = ({
         className="relative w-[342px] h-[400px] "
       >
         {isHovering && hideVideo !== "none" ? (
-          <video
-            ref={videoRef}
-            playsInline
-            width="1000"
+          // <video
+          //   ref={videoRef}
+          //   playsInline
+          //   width="1000"
+          //   height="400"
+          //   muted
+          //   controls={false} // Removes the controls
+          //   preload="auto"
+          //   style={{ display: hideVideo }}
+          // >
+          //   <source src="/videos/vogue-vid1.MP4" type="video/mp4" />
+          // </video>
+          <iframe
+            src="https://player.vimeo.com/video/1034774205?muted=1&autoplay=1&controls=0&h=0e505cf1c0&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+            width="342"
             height="400"
-            muted
-            controls={false} // Removes the controls
-            preload="auto"
-            style={{ display: hideVideo }}
-          >
-            <source src="/videos/vogue-vid1.MP4" type="video/mp4" />
-          </video>
+            title="vogue-vid1"
+          ></iframe>
         ) : (
           <Image className="object-fit" src={imageSrc} alt="event image" fill />
         )}

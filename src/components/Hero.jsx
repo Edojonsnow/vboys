@@ -1,21 +1,15 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import Player from "@vimeo/player";
 
 const Hero = ({ hideVideo }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(null);
 
-  const videoRef = useRef(null);
+  const iframeRef = useRef(null);
 
   useEffect(() => {
-    // if (isClicked) {
-    //   videoRef.current.play();
-    // } else {
-    //   videoRef.current.pause();
-    //   videoRef.current.currentTime = 0;
-    // }
-
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 430);
     };
@@ -53,25 +47,36 @@ const Hero = ({ hideVideo }) => {
           />
         )}
 
-        {/* <video
-          ref={videoRef}
-          className=" object-contain "
-          playsInline
-          loop
-          controls={false}
-          preload="auto"
-          style={{ display: hideVideo }}
-        >
-          <source src="/videos/vb-hero-vid.MOV" type="video/mp4" />
-        </video> */}
+        {isClicked && (
+          <iframe
+            ref={iframeRef}
+            className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2 object-cover"
+            src="https://player.vimeo.com/video/1034774092?controls=0&autoplay=1&h=397876b157&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            allow="autoplay; fullscreen; clipboard-write"
+            title="vb-hero-vid"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              minWidth: "100%",
+              minHeight: "100%",
+              width: "auto",
+              height: "auto",
+              transform: "translate(-50%, -50%)",
+              objectFit: "cover",
+            }}
+            allowFullScreen
+          ></iframe>
+        )}
 
-        {/* <button
+        <button
           onClick={() => setIsClicked(!isClicked)}
-          className="absolute top-40 font-helv cursor-pointer rounded-2xl bg-bg p-5 hover:scale-110 hover:bg-black hover:text-bg transition-all duration-300"
+          className={` absolute ${isClicked ? "top-3/4 animate-none " : "top-40 animate-bounce"}    
+             py-4 px-5 text-[12px] font-helv cursor-pointer rounded-2xl bg-bg lg:p-5 hover:scale-110  hover:bg-black hover:text-bg transition-all duration-300`}
           style={{ display: hideVideo }}
         >
           {!isClicked ? "CLICK ME" : "STOP PLAYBACK"}
-        </button> */}
+        </button>
       </div>
     </div>
   );
