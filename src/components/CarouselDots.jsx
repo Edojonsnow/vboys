@@ -40,8 +40,10 @@ export const DotButton = (props) => {
   const { children, ...restProps } = props;
 
   return (
-    <button type="button" {...restProps}>
-      {children}
-    </button>
+    <button
+      type="button"
+      className=" text-white bg-white z-10 "
+      {...restProps}
+    ></button>
   );
 };

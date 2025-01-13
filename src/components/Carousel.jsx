@@ -63,8 +63,8 @@ const EmblaCarousel = (props) => {
   ];
 
   return (
-    <section className="embla overflow-hidden relative">
-      <div className="embla__viewport" ref={emblaRef}>
+    <section className="embla overflow-hidden md:w-[790px] lg:w-[1060px] mx-auto relative">
+      <div className="embla__viewport " ref={emblaRef}>
         <div className="embla__container flex gap-4">
           {events.map((event, index) => (
             <EventCard
@@ -100,7 +100,7 @@ const EmblaCarousel = (props) => {
           )}
         </div>
 
-        <div className="embla__dots">
+        <div className="embla__bottom-dots">
           {scrollSnaps.map((_, index) => (
             <DotButton
               key={index}
@@ -112,6 +112,7 @@ const EmblaCarousel = (props) => {
           ))}
         </div>
       </div>
+      <hr className="mt-4 border-[#FDF9BB]" />
     </section>
   );
 };

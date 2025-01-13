@@ -38,17 +38,41 @@ const Footer = () => {
   }, []);
   return (
     <div className="  ">
-      <div className="relative mt-4 w-full  h-[921px] md:h-[250px]">
+      <div className="relative mt-4 w-full h-[70px] md:h-[140px] lg:h-[250px]">
         <Image
-          src={isSmallScreen ? "/soaker-mobile.png" : "/image-11.png"}
+          src={isSmallScreen ? "/mobile-soaker.png" : "/soakers.png"}
           alt="soaker"
           fill
-          sizes="(max-width: 430px) 100vw, 50vw"
         />
       </div>
-      <div className="flex lg:flex-row flex-col gap-4  py-4 mx-8 items-center justify-between">
+      <Image
+        src="/vblogo.png"
+        className=" mx-auto lg:hidden"
+        width={100}
+        height={50}
+        alt="vb logo"
+      />
+      <div className="flex lg:flex-row flex-col gap-4  py-4 lg:mx-32 items-center justify-between">
         <div className="flex gap-4 flex-col ">
           <MailchimpForm />
+          <Image
+            src="/vblogo.png"
+            className="hidden lg:block"
+            width={76}
+            height={100}
+            alt="vb logo"
+          />
+          <div className="flex justify-center lg:hidden lg:justify-start  gap-4">
+            <Link className="text-[#FAF1CB]" href="/events">
+              EVENTS
+            </Link>
+            <Link className="text-[#FAF1CB]" href="/">
+              CONTACTS
+            </Link>
+            <Link className="text-[#FAF1CB]" href="/about">
+              ABOUT
+            </Link>
+          </div>
           {/* <form
             action="https://instagram.us21.list-manage.com/subscribe/post?u=8948ce36ffa9598bbdce03c53&amp;id=c62a4d6fa6&amp;f_id=00e3ffe6f0"
             method="post"
@@ -81,55 +105,54 @@ const Footer = () => {
               )}
             </div>
           </form> */}
-          <div className="flex justify-center lg:justify-start  gap-4">
-            <Link className="text-bg" href="/events">
-              EVENTS
-            </Link>
-            <Link className="text-bg" href="/">
-              CONTACTS
-            </Link>
-            <Link className="text-bg" href="/about">
-              ABOUT
-            </Link>
-          </div>
         </div>
-        <div className="flex  items-center flex-col">
+        <div className="flex  items-center flex-col gap-10">
           <div className="flex gap-4">
             <Link
               href="/"
-              className="bg-bg w-10 h-10 flex items-center justify-center  rounded-full "
+              className=" w-10 h-10 flex items-center justify-center   "
             >
               <Image
                 src="/twitter.svg"
-                width={20}
-                height={20}
+                width={32}
+                height={32}
                 alt="instagram icon"
               />
             </Link>
             <Link
               href="/"
-              className="bg-bg w-10 h-10 flex items-center justify-center  rounded-full "
+              className=" w-10 h-10 flex items-center justify-center   "
             >
               <Image
                 src="/instagram.svg"
-                width={20}
-                height={20}
+                width={32}
+                height={32}
                 alt="instagram icon"
               />
             </Link>
             <Link
               href="/"
-              className="bg-bg w-10 h-10 flex items-center justify-center  rounded-full "
+              className=" w-10 h-10 flex items-center justify-center "
             >
               <Image
                 src="/youtube.svg"
-                width={20}
-                height={20}
+                width={32}
+                height={32}
                 alt="instagram icon"
               />
             </Link>
           </div>
-          <Image src="/vblogo.png" width={100} height={50} alt="vb logo" />
+          <div className="hidden justify-center lg:flex lg:justify-start  gap-4">
+            <Link className="text-[#FAF1CB]" href="/events">
+              EVENTS
+            </Link>
+            <Link className="text-[#FAF1CB]" href="/">
+              CONTACTS
+            </Link>
+            <Link className="text-[#FAF1CB]" href="/about">
+              ABOUT
+            </Link>
+          </div>
         </div>
       </div>
     </div>

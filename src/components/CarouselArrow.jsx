@@ -41,11 +41,11 @@ export const PrevButton = (props) => {
 
   return (
     <button
-      className={` left-2 absolute top-1/3  rotate-180 bg-zinc-900 opacity-55 rounded-full p-4`}
+      className={` left-2 absolute top-1/3  rotate-180 bg-bg rounded-full flex justify-center items-center w-12 h-12 `}
       type="button"
       {...restProps}
     >
-      <Image className="" src="/arrow.svg" alt="" width={15} height={15} />
+      <Image className="" src="/arrow.svg" alt="" width={12} height={21} />
     </button>
   );
 };
@@ -55,11 +55,11 @@ export const NextButton = (props) => {
 
   return (
     <button
-      className={` right-2 absolute top-1/3  bg-zinc-900 opacity-55 rounded-full p-4`}
+      className={` right-2 absolute top-1/3  bg-bg  rounded-full flex justify-center items-center w-12 h-12 `}
       type="button"
       {...restProps}
     >
-      <Image className="" src="/arrow.svg" alt="" width={15} height={15} />
+      <Image className="" src="/arrow.svg" alt="" width={12} height={21} />
     </button>
   );
 };

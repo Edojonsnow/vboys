@@ -55,11 +55,11 @@ const Cookout = () => {
   ];
   return (
     <div className="relative h-fit mt-4">
-      <div className=" w-full h-[500px] relative">
+      <div className=" w-full h-[680px] relative">
         <Image
           src={urlFor(bannerImage.mainImage).url()}
           alt={bannerImage.title}
-          className=" object-cover object-top"
+          className=" object-cover object-center"
           fill
         />
       </div>
@@ -86,7 +86,7 @@ const Cookout = () => {
       <button
         className={` ${
           currentItem == 0 ? "right-5" : "left-5 rotate-180"
-        } absolute top-1/2  bg-zinc-900 opacity-55 rounded-full p-4`}
+        } absolute top-1/2  bg-bg  rounded-full p-4`}
         onClick={handleClick}
       >
         <Image className="" src="/arrow.svg" alt="" width={15} height={15} />

@@ -57,6 +57,35 @@ h1 {
   color: white;
 }
 
+.navBg {
+  background: linear-gradient(
+    90deg,
+    #0a0609 58.73%,
+    #7a86ab 76.03%,
+    #7a86ab 86.63%,
+    #806c77 90.16%,
+    #7a86ab 96.04%
+  );
+}
+
+.embla__bottom-dots {
+  display: flex;
+  justify-content: center; /* Center the dots */
+  margin-top: 40px; /* Space above the dots */
+}
+
+.embla__dot {
+  width: 16px; /* Adjust size as needed */
+  height: 16px; /* Adjust size as needed */
+  border-radius: 50%; /* Make them circular */
+  background-color: #fdf9bb; /* Default color */
+  margin: 0 5px; /* Space between dots */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.embla__dot--selected {
+  background-color: #faed25; /* Color for the selected dot */
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -74,4 +103,10 @@ h1 {
 }
 .mailchimp-margin {
   margin: 0 !important;
+}
+@media (max-width: 430px) {
+  .mailchimp {
+    --webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+  }
 }

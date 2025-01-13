@@ -15,7 +15,7 @@ const Nav = () => {
   }, [isOpen]);
   return (
     <div>
-      <div className="fixed z-20 left-0 right-0 mx-2 flex justify-between items-center">
+      <div className="navBg z-20 left-0 right-0 h-20  lg:h-28   px-10 md:px-32 flex justify-between items-center">
         <div>
           <Link href="/">
             <Image src="/vblogo.png" alt="logo" width={75} height={75} />
@@ -24,26 +24,16 @@ const Nav = () => {
 
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className=" group cursor-pointer flex flex-col gap-1  justify-center items-center w-16 h-16 rounded-full bg-bg"
+          className=" group cursor-pointer flex flex-col gap-4  justify-center items-center w-16 h-16 "
         >
           <div
-            className={` w-7 h-1 bg-black rounded-sm relative ${
-              isOpen
-                ? "transition rotate-45 translate-y-2"
-                : "transition rotate-0 translate-y-0"
-            }  `}
+            className={` w-16 h-[1.5px] bg-white rounded-sm relative  `}
           ></div>
           <div
-            className={` w-4 h-1 bg-black rounded-sm relative left-1  ${
-              isOpen ? "scale-x-0 transition" : "scale-x-1 transition"
-            } `}
+            className={` w-16 h-[1.5px] bg-white rounded-sm relative   `}
           ></div>
           <div
-            className={` w-7 h-1 bg-black rounded-sm relative ${
-              isOpen
-                ? "transition -rotate-45 -translate-y-2"
-                : "transition rotate-0 translate-y-0"
-            }  `}
+            className={` w-16 h-[1.5px] bg-white rounded-sm relative  `}
           ></div>{" "}
         </div>
       </div>

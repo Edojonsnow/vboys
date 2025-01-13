@@ -69,14 +69,14 @@ const Hero = ({ hideVideo }) => {
           ></iframe>
         )}
 
-        <button
+        {/* <button
           onClick={() => setIsClicked(!isClicked)}
           className={` absolute ${isClicked ? "top-3/4 animate-none " : "top-40 animate-bounce"}    
              py-4 px-5 text-[12px] font-helv cursor-pointer rounded-2xl bg-bg lg:p-5 hover:scale-110  hover:bg-black hover:text-bg transition-all duration-300`}
           style={{ display: hideVideo }}
         >
           {!isClicked ? "CLICK ME" : "STOP PLAYBACK"}
-        </button>
+        </button> */}
       </div>
     </div>
   );
