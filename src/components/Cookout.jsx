@@ -46,7 +46,7 @@ const Cookout = () => {
 
     fetchBannerImage();
     fetchEventInfo();
-  }, []);
+  }, [eventInfo]);
   if (isLoading) return <div>Loading...</div>;
   if (!bannerImage)
     return <div className="text-white">No banner image found</div>;

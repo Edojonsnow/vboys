@@ -20,7 +20,7 @@ function Midpage() {
 
   useEffect(() => {
     fetchEventInfo();
-  }, []);
+  }, [eventInfo]);
 
   return (
     <div className="relative h-fit mt-4">
