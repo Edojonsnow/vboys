@@ -40,7 +40,7 @@ const EventCard = ({
         onMouseLeave={handleMouseLeave}
         className="relative w-[342px] h-[400px] "
       >
-        {isHovering && hideVideo !== "none" ? (
+        {/* {isHovering && hideVideo !== "none" ? (
           <iframe
             src="https://player.vimeo.com/video/1034774205?muted=1&autoplay=1&controls=0&h=0e505cf1c0&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
@@ -50,7 +50,8 @@ const EventCard = ({
           ></iframe>
         ) : (
           <Image className="object-fit" src={imageSrc} alt="event image" fill />
-        )}
+        )} */}
+        <Image className="object-fit" src={imageSrc} alt="event image" fill />
       </div>
       <div className="flex mt-4 justify-between">
         <h3 className="text-white font-semibold">{eventTitle}</h3>
@@ -61,9 +62,9 @@ const EventCard = ({
       </div>
       <div className=" flex flex-col gap-0">
         <p className="text-bg"> {date}</p>
-        <div className="flex">
-          <IconMapPin stroke={2} color="#faed25" />
+        <div className="flex justify-between">
           <p className="text-white"> {location}</p>
+          <IconMapPin stroke={2} color="#faed25" />
         </div>
       </div>
     </div>

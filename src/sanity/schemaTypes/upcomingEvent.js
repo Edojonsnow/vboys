@@ -1,7 +1,7 @@
 import { DocumentTextIcon } from "@sanity/icons";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
-export const imageType = defineType({
+export const upcomingEventType = defineType({
   name: "upcomingImage",
   title: "upcomingImage",
   type: "document",
@@ -15,21 +15,10 @@ export const imageType = defineType({
     defineField({
       name: "mainImage",
       type: "image",
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: "alt",
-          type: "string",
-          title: "Alternative text",
-        },
-      ],
     }),
-
     defineField({
-      name: "publishedAt",
-      type: "datetime",
+      name: "eventUrl",
+      type: "string",
     }),
   ],
   preview: {
