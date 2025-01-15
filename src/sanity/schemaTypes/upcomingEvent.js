@@ -2,8 +2,8 @@ import { DocumentTextIcon } from "@sanity/icons";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const imageType = defineType({
-  name: "vbImage",
-  title: "vbImage",
+  name: "upcomingImage",
+  title: "upcomingImage",
   type: "document",
 
   fields: [
@@ -11,13 +11,7 @@ export const imageType = defineType({
       name: "title",
       type: "string",
     }),
-    defineField({
-      name: "slug",
-      type: "slug",
-      options: {
-        source: "title",
-      },
-    }),
+
     defineField({
       name: "mainImage",
       type: "image",
@@ -33,11 +27,6 @@ export const imageType = defineType({
       ],
     }),
 
-    defineField({
-      name: "categories",
-      type: "array",
-      of: [defineArrayMember({ type: "reference", to: { type: "category" } })],
-    }),
     defineField({
       name: "publishedAt",
       type: "datetime",
