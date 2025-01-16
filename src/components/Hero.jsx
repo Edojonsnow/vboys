@@ -30,7 +30,7 @@ const Hero = ({ hideVideo }) => {
 
   return (
     <div>
-      <div className="w-full h-[500px] md:h-[300px] lg:h-[400px]   relative flex justify-center">
+      <div className="w-full h-[500px] md:h-[300px] lg:h-[500px]   relative flex justify-center">
         {isSmallScreen ? (
           <Image
             className={` object-fill`}

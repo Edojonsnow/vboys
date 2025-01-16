@@ -63,8 +63,11 @@ const EmblaCarousel = (props) => {
   ];
 
   return (
-    <section className="embla overflow-hidden md:w-[790px] lg:w-[1060px] mx-auto relative">
-      <div className="embla__viewport " ref={emblaRef}>
+    <section className="embla     mx-auto relative">
+      <div
+        className="embla__viewport overflow-hidden w-[342px] md:w-[700px] lg:w-[1060px]"
+        ref={emblaRef}
+      >
         <div className="embla__container flex gap-4">
           {events.map((event, index) => (
             <EventCard
@@ -80,7 +83,7 @@ const EmblaCarousel = (props) => {
         </div>
       </div>
 
-      <div className="embla__controls">
+      <div className="embla__controls z-50">
         <div className="embla__buttons">
           {prevBtnDisabled ? (
             ""
@@ -112,7 +115,7 @@ const EmblaCarousel = (props) => {
           ))}
         </div>
       </div>
-      <hr className="mt-4 border-[#FDF9BB]" />
+      <hr className="my-6 border-[#FDF9BB]" />
     </section>
   );
 };

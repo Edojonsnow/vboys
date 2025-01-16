@@ -24,6 +24,11 @@ module.exports = {
         h4: "20px",
         p: "18px",
       },
+      screens: {
+        sm: "375px",
+        md: "768px",
+        lg: "1024px",
+      },
     },
   },
   plugins: [],

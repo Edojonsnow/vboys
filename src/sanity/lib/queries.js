@@ -15,3 +15,7 @@ export const IMAGE_QUERY =
 export const EVENT_QUERY = defineQuery(`*[_type == "eventInfo" ][0]{
   _id, title, description, eventUrl , buttonText 
 }`);
+
+export const UPCOMINGEVENT_QUERY = defineQuery(`*[_type == "upcomingImage" ][0]{
+  _id, title, mainImage, eventUrl  
+}`);

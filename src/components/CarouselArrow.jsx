@@ -41,7 +41,7 @@ export const PrevButton = (props) => {
 
   return (
     <button
-      className={` left-2 absolute top-1/3  rotate-180 bg-bg rounded-full flex justify-center items-center w-12 h-12 `}
+      className={` md:-left-5 -left-3 absolute top-1/3  rotate-180 bg-bg rounded-full flex justify-center items-center w-12 h-12 `}
       type="button"
       {...restProps}
     >
@@ -55,7 +55,7 @@ export const NextButton = (props) => {
 
   return (
     <button
-      className={` right-2 absolute top-1/3  bg-bg  rounded-full flex justify-center items-center w-12 h-12 `}
+      className={` md:-right-5 -right-3 absolute top-1/3  bg-bg  rounded-full flex justify-center items-center w-12 h-12 `}
       type="button"
       {...restProps}
     >

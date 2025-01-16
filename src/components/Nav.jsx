@@ -16,10 +16,8 @@ const Nav = () => {
   return (
     <div>
       <div className="navBg z-20 left-0 right-0 h-20  lg:h-28   px-10 md:px-32 flex justify-between items-center">
-        <div>
-          <Link href="/">
-            <Image src="/vblogo.png" alt="logo" width={75} height={75} />
-          </Link>
+        <div className="relative w-12 h-20 md:w-16 md:h-24">
+          <Image src="/vblogo.png" alt="logo" fill />
         </div>
 
         <div
@@ -27,13 +25,13 @@ const Nav = () => {
           className=" group cursor-pointer flex flex-col gap-4  justify-center items-center w-16 h-16 "
         >
           <div
-            className={` w-16 h-[1.5px] bg-white rounded-sm relative  `}
+            className={` w-10  md:w-16 h-[1.5px] bg-white rounded-sm relative  `}
           ></div>
           <div
-            className={` w-16 h-[1.5px] bg-white rounded-sm relative   `}
+            className={` w-10  md:w-16 h-[1.5px] bg-white rounded-sm relative   `}
           ></div>
           <div
-            className={` w-16 h-[1.5px] bg-white rounded-sm relative  `}
+            className={` w-10  md:w-16 h-[1.5px] bg-white rounded-sm relative  `}
           ></div>{" "}
         </div>
       </div>

@@ -38,7 +38,7 @@ const Footer = () => {
   }, []);
   return (
     <div className="  ">
-      <div className="relative mt-4 w-full h-[70px] md:h-[140px] lg:h-[250px]">
+      <div className="relative  w-full h-[70px] md:h-[140px] lg:h-[206px]">
         <Image
           src={isSmallScreen ? "/mobile-soaker.png" : "/soakers.png"}
           alt="soaker"
@@ -53,7 +53,7 @@ const Footer = () => {
         alt="vb logo"
       />
       <div className="flex lg:flex-row flex-col gap-4  py-4 lg:mx-32 items-center justify-between">
-        <div className="flex gap-4 flex-col ">
+        <div className="flex gap-3 flex-col ">
           <MailchimpForm />
           <Image
             src="/vblogo.png"
@@ -106,7 +106,7 @@ const Footer = () => {
             </div>
           </form> */}
         </div>
-        <div className="flex  items-center flex-col gap-10">
+        <div className="flex  items-center  flex-col gap-20 justify-between">
           <div className="flex gap-4">
             <Link
               href="/"
@@ -142,7 +142,7 @@ const Footer = () => {
               />
             </Link>
           </div>
-          <div className="hidden justify-center lg:flex lg:justify-start  gap-4">
+          <div className="hidden justify-center lg:flex lg:justify-start  gap-10">
             <Link className="text-[#FAF1CB]" href="/events">
               EVENTS
             </Link>

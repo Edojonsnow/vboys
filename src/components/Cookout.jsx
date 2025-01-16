@@ -52,7 +52,7 @@ const Cookout = () => {
     return <div className="text-white">No banner image found</div>;
 
   return (
-    <div className="relative h-fit mt-4">
+    <div className="relative h-fit ">
       <div className=" w-full h-[390px] lg:h-[680px] relative">
         <Image
           src={urlFor(bannerImage.mainImage).url()}
