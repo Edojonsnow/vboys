@@ -68,7 +68,7 @@ const Cookout = () => {
             <h2 className="font-helv">{eventInfo.title}</h2>
             <p className="uppercase">{eventInfo.description}</p>
             <Link href={eventInfo.eventUrl || "#"}>
-              <button className="bg-white py-3 px-6 font-semibold rounded-2xl">
+              <button className="bg-white py-3 px-6 font-semibold ">
                 {eventInfo.buttonText}
               </button>
             </Link>

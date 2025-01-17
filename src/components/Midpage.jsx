@@ -36,7 +36,7 @@ function Midpage() {
         )}
       </div>
       <Link href={eventImage.eventUrl || "#"}>
-        <button className="absolute bottom-16 font-semibold left-1/2 transform -translate-x-1/2 bg-bg w-fit px-4 py-2 md:px-8 md:py-4 rounded-[10px] text-black">
+        <button className="absolute bottom-16 font-semibold left-1/2 transform -translate-x-1/2 bg-bg w-fit px-4 py-2 md:px-8 md:py-4  text-black">
           RSVP
         </button>
       </Link>

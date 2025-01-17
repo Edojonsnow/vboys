@@ -11,7 +11,7 @@ const Hero = ({ hideVideo }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 768);
+      setIsSmallScreen(window.innerWidth <= 430);
     };
 
     // Initial check on component mount
@@ -30,21 +30,18 @@ const Hero = ({ hideVideo }) => {
 
   return (
     <div>
-      <div className="w-full h-[500px] md:h-[300px] lg:h-[500px]   relative flex justify-center">
+      <div
+        className={`${isSmallScreen ? "h-[500px] " : "h-[290px]"} w-full  lg:h-[500px]   relative flex justify-center`}
+      >
         {isSmallScreen ? (
           <Image
-            className={` object-fill`}
+            className={` `}
             src="/hero-mobile2.jpeg"
             alt="hero-image"
             fill
           />
         ) : (
-          <Image
-            className={` object-cover`}
-            src="/newHero.jpg"
-            alt="hero-image"
-            fill
-          />
+          <Image className={` `} src="/newHero.jpg" alt="hero-image" fill />
         )}
         {/* <Image
           className="md:object-cover md:object-right-bottom"

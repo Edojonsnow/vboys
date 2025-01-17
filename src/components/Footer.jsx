@@ -48,7 +48,7 @@ const Footer = () => {
       <Image
         src="/vblogo.png"
         className=" mx-auto lg:hidden"
-        width={100}
+        width={70}
         height={50}
         alt="vb logo"
       />
@@ -63,13 +63,13 @@ const Footer = () => {
             alt="vb logo"
           />
           <div className="flex justify-center lg:hidden lg:justify-start  gap-4">
-            <Link className="text-[#FAF1CB]" href="/events">
+            <Link className="text-[#FAF1CB] text-sm" href="/events">
               EVENTS
             </Link>
-            <Link className="text-[#FAF1CB]" href="/">
+            <Link className="text-[#FAF1CB] text-sm" href="/">
               CONTACTS
             </Link>
-            <Link className="text-[#FAF1CB]" href="/about">
+            <Link className="text-[#FAF1CB] text-sm" href="/about">
               ABOUT
             </Link>
           </div>
@@ -106,7 +106,7 @@ const Footer = () => {
             </div>
           </form> */}
         </div>
-        <div className="flex  items-center  flex-col gap-20 justify-between">
+        <div className="flex mt-10 md:mt-0  items-center  flex-col gap-20 justify-between">
           <div className="flex gap-4">
             <Link
               href="/"

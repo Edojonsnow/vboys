@@ -96,17 +96,11 @@ h1 {
 }
 
 .mailchimp {
-  --webkit-border-radius: 8px !important;
-  /* border-radius: 8px !important; */
+  /* --webkit-border-radius: 8px !important; */
+  border-radius: 0px !important;
   outline: none !important;
   border: none !important;
 }
 .mailchimp-margin {
   margin: 0 !important;
-}
-@media (max-width: 430px) {
-  .mailchimp {
-    --webkit-border-radius: 0 !important;
-    /* border-radius: 0 !important; */
-  }
 }
