@@ -16,9 +16,11 @@ const Nav = () => {
   return (
     <div>
       <div className="navBg z-20 left-0 right-0 h-20  lg:h-28   px-10 md:px-32 flex justify-between items-center">
-        <div className="relative w-12 h-20 md:w-16 md:h-24">
-          <Image src="/vblogo.png" alt="logo" fill />
-        </div>
+        <Link href="/">
+          <div className="relative w-12 h-20 md:w-16 md:h-24">
+            <Image src="/vblogo.png" alt="logo" fill />
+          </div>
+        </Link>
 
         <div
           onClick={() => setIsOpen(!isOpen)}
@@ -40,29 +42,29 @@ const Nav = () => {
           <div className="h-screen w-screen fixed   bg-black opacity-40  z-10"></div>
           <div
             data-aos="slide-up"
-            className=" fixed top-20  left-5 lg:top-10 lg:left-10 flex flex-col gap-1 z-10"
+            className=" fixed top-1/2 -translate-y-1/2 p-10 bg-black rounded-2xl items-center left-1/2 -translate-x-1/2  flex flex-col gap-1 z-10"
           >
             <Link
               href="/events"
-              className="text-bg font-helv text-[50px] lg:text-[100px] font-semibold"
+              className="text-bg font-helv text-[40px] lg:text-[100px] font-semibold"
             >
               Events
             </Link>
             <Link
               href="/about"
-              className="text-bg font-helv text-[50px] lg:text-[100px] font-semibold"
+              className="text-bg font-helv text-[40px] lg:text-[100px] font-semibold"
             >
               About
             </Link>
             <Link
               href="/"
-              className="text-bg font-helv text-[50px] lg:text-[100px] font-semibold"
+              className="text-bg font-helv text-[40px] lg:text-[100px] font-semibold"
             >
               Virtual
             </Link>
             <Link
               href="/"
-              className="text-bg font-helv text-[50px] lg:text-[100px] font-semibold"
+              className="text-bg font-helv text-[40px] lg:text-[100px] font-semibold"
             >
               Info
             </Link>
