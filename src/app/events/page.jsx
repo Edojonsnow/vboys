@@ -32,7 +32,7 @@ const Events = () => {
     <div className="">
       <Nav />
 
-      <div className="pt-16">
+      <div className="pt-20">
         <div className="mt-6 flex flex-col mb-20 lg:mb-0 ">
           <h1 className="text-[#FEFCDE] font-semibold mx-auto mb-2 lg:w-[1060px]  ">
             {isSmallScreen ? " PAST" : "PAST EVENTS"}

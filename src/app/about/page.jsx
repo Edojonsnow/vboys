@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div>
       <Nav />
-      <div className="">
+      <div className="pt-20">
         <div className="  flex flex-col lg:flex-row mx-7 gap-12 justify-around items-center py-10">
           <div className="relative block  lg:hidden  ">
             <Image

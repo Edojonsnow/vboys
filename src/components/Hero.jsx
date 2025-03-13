@@ -29,7 +29,7 @@ const Hero = ({ hideVideo }) => {
   }, [isClicked, isSmallScreen]);
 
   return (
-    <div>
+    <div className="pt-20">
       <div
         className={`${isSmallScreen ? "h-[500px] " : "h-[200px]"} w-full md:h-[290px]  lg:h-[500px]   relative flex justify-center`}
       >

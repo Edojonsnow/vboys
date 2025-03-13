@@ -143,13 +143,13 @@ const Footer = () => {
             </Link>
           </div>
           <div className="hidden justify-center lg:flex lg:justify-start  gap-10">
-            <Link className="text-[#FAF1CB]" href="/events">
+            <Link className="text-[#FAF1CB] hover:underline" href="/events">
               EVENTS
             </Link>
-            <Link className="text-[#FAF1CB]" href="/">
+            <Link className="text-[#FAF1CB] hover:underline" href="/">
               CONTACTS
             </Link>
-            <Link className="text-[#FAF1CB]" href="/about">
+            <Link className="text-[#FAF1CB] hover:underline" href="/about">
               ABOUT
             </Link>
           </div>

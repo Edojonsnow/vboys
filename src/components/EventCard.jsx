@@ -34,7 +34,7 @@ const EventCard = ({
   };
 
   return (
-    <div className="w-fit">
+    <div className="w-fit  ">
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -51,7 +51,12 @@ const EventCard = ({
         ) : (
           <Image className="object-fit" src={imageSrc} alt="event image" fill />
         )} */}
-        <Image className="object-fit" src={imageSrc} alt="event image" fill />
+        <Image
+          className="object-fit hover:scale-105 transition-all duration-200"
+          src={imageSrc}
+          alt="event image"
+          fill
+        />
       </div>
       <div className="flex mt-4 justify-between">
         <h3 className="text-white font-semibold">{eventTitle}</h3>
