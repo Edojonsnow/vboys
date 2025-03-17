@@ -48,7 +48,7 @@ const About = () => {
             />
           </div>
         </div>
-        <hr className="mt-4 mx-12 lg:mx-32 border-[#FDF9BB]" />
+        <hr className="mb-10 mx-12 lg:mx-32 border-[#FDF9BB]" />
       </div>
 
       <VbVirtual
