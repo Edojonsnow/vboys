@@ -1,161 +1,60 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import MailchimpForm from "./MailChimpForm";
+import React from "react";
+import Image from "next/image";
+import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from "@tabler/icons-react";
 
 const Footer = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 430);
-    };
-
-    // Initial check on component mount
-    handleResize();
-
-    // Listen for window resize events
-    window.addEventListener("resize", handleResize);
-    if (isSmallScreen) {
-    } else {
-    }
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
   return (
-    <div className="  ">
-      <div className="relative  w-full h-[70px] md:h-[140px] lg:h-[206px]">
-        <Image
-          src={isSmallScreen ? "/mobile-soaker.png" : "/soakers.png"}
-          alt="soaker"
-          fill
-        />
-      </div>
-      <Image
-        src="/vblogo.png"
-        className=" mx-auto lg:hidden"
-        width={70}
-        height={50}
-        alt="vb logo"
-      />
-      <div className="flex lg:flex-row flex-col gap-4  py-4 lg:mx-32 items-center justify-between">
-        <div className="flex gap-3 flex-col ">
-          <MailchimpForm />
-          <Image
-            src="/vblogo.png"
-            className="hidden lg:block"
-            width={76}
-            height={100}
-            alt="vb logo"
-          />
-          <div className="flex justify-center lg:hidden lg:justify-start  gap-4">
-            <Link className="text-[#FAF1CB] text-sm" href="/events">
-              EVENTS
-            </Link>
-            <Link className="text-[#FAF1CB] text-sm" href="/">
-              CONTACTS
-            </Link>
-            <Link className="text-[#FAF1CB] text-sm" href="/about">
-              ABOUT
-            </Link>
+    <footer className="bg-black pt-20 pb-10 border-t border-white/5 relative overflow-hidden">
+        {/* Background Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-neon-yellow shadow-[0_0_100px_rgba(250,237,37,0.3)]" />
+
+      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+        
+        {/* Brand Area */}
+        <div className="text-center md:text-left">
+          <div className="relative w-24 h-12 mb-4 mx-auto md:mx-0">
+            <Image src="/vblogo.svg" alt="vboys logo" fill className="object-contain" />
           </div>
-          {/* <form
-            action="https://instagram.us21.list-manage.com/subscribe/post?u=8948ce36ffa9598bbdce03c53&amp;id=c62a4d6fa6&amp;f_id=00e3ffe6f0"
-            method="post"
-            id="mc-embedded-subscribe-form"
-            name="mc-embedded-subscribe-form"
-            className="flex flex-col items-center"
-          >
-            {isSmallScreen && (
-              <p className="  uppercase  text-white text-[10px] ">
-                Sign up for our newsletter
-              </p>
-            )}
-            <div className="flex ">
-              <input
-                className="w-72 h-12 bg-bg rounded-lg pl-4 outline-none"
-                type="email"
-                placeholder="Enter Email Address"
-              />
-              <input
-                className="w-16 h-12 bg-bg rounded-lg "
-                type="submit"
-                value="Go"
-              />
-            </div>
-            <div>
-              {!isSmallScreen && (
-                <p className=" uppercase  text-white text-[10px] ">
-                  Sign up for our newsletter
-                </p>
-              )}
-            </div>
-          </form> */}
+          <p className="text-gray-400 max-w-xs text-sm">
+            Curating the best nightlife experiences since 2024. Next generation events for the digital age.
+          </p>
         </div>
-        <div className="flex mt-10 md:mt-0  items-center  flex-col gap-20 justify-between">
-          <div className="flex gap-4">
-            <Link
-              href="/"
-              className=" w-10 h-10 flex items-center justify-center   "
-            >
-              <Image
-                src="/twitter.svg"
-                width={32}
-                height={32}
-                alt="instagram icon"
-              />
-            </Link>
-            <Link
-              href="/"
-              className=" w-10 h-10 flex items-center justify-center   "
-            >
-              <Image
-                src="/instagram.svg"
-                width={32}
-                height={32}
-                alt="instagram icon"
-              />
-            </Link>
-            <Link
-              href="/"
-              className=" w-10 h-10 flex items-center justify-center "
-            >
-              <Image
-                src="/youtube.svg"
-                width={32}
-                height={32}
-                alt="instagram icon"
-              />
-            </Link>
+
+        {/* Links */}
+        <div className="flex gap-8 md:gap-16">
+          <div className="flex flex-col gap-4 text-center md:text-left">
+            <h3 className="text-white font-bold uppercase tracking-widest text-xs">Menu</h3>
+            <Link href="/events" className="text-gray-400 hover:text-neon-yellow transition-colors text-sm">Events</Link>
+            <Link href="/about" className="text-gray-400 hover:text-neon-yellow transition-colors text-sm">About</Link>
+            <Link href="/" className="text-gray-400 hover:text-neon-yellow transition-colors text-sm">Contact</Link>
           </div>
-          <div className="hidden justify-center lg:flex lg:justify-start  gap-10">
-            <Link className="text-[#FAF1CB] hover:underline" href="/events">
-              EVENTS
-            </Link>
-            <Link className="text-[#FAF1CB] hover:underline" href="/">
-              CONTACTS
-            </Link>
-            <Link className="text-[#FAF1CB] hover:underline" href="/about">
-              ABOUT
-            </Link>
+          <div className="flex flex-col gap-4 text-center md:text-left">
+             <h3 className="text-white font-bold uppercase tracking-widest text-xs">Legal</h3>
+            <Link href="/" className="text-gray-400 hover:text-neon-yellow transition-colors text-sm">Privacy</Link>
+            <Link href="/" className="text-gray-400 hover:text-neon-yellow transition-colors text-sm">Terms</Link>
           </div>
         </div>
+
+        {/* Socials */}
+        <div className="flex gap-4">
+           <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-neon-yellow hover:text-black hover:scale-110 transition-all text-white">
+                <IconBrandInstagram size={20} />
+           </a>
+           <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-neon-yellow hover:text-black hover:scale-110 transition-all text-white">
+                <IconBrandTwitter size={20} />
+           </a>
+           <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-neon-yellow hover:text-black hover:scale-110 transition-all text-white">
+                <IconBrandYoutube size={20} />
+           </a>
+        </div>
       </div>
-    </div>
+
+      <div className="mt-20 text-center text-gray-600 text-[10px] uppercase tracking-widest">
+        © 2026 Virtual Boys. All Rights Reserved.
+      </div>
+    </footer>
   );
 };
 

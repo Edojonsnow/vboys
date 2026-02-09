@@ -1,11 +1,20 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { IconX } from "@tabler/icons-react";
+import { IconX, IconMenu2 } from "@tabler/icons-react";
 import React, { useEffect, useState } from "react";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -14,70 +23,88 @@ const Nav = () => {
       document.body.style.overflow = "unset";
     }
   }, [isOpen]);
-  return (
-    <div className="fixed z-20 w-full">
-      <div className="navBg left-0 right-0 h-20  lg:h-28   px-10 md:px-32 flex justify-between items-center">
-        <Link href="/">
-          <div className="relative w-12 h-20 md:w-16 md:h-24">
-            <Image src="/vblogo.png" alt="logo" fill />
-          </div>
-        </Link>
 
-        <div
-          onClick={() => setIsOpen(!isOpen)}
-          className=" group cursor-pointer flex flex-col gap-4  justify-center items-center w-16 h-16 "
-        >
-          <div
-            className={` w-10  md:w-16 h-[1.5px] bg-white rounded-sm relative  `}
-          ></div>
-          <div
-            className={` w-10  md:w-16 h-[1.5px] bg-white rounded-sm relative   `}
-          ></div>
-          <div
-            className={` w-10  md:w-16 h-[1.5px] bg-white rounded-sm relative  `}
-          ></div>
-        </div>
-      </div>
-      {isOpen && (
-        <div>
-          <div
-            data-aos="slide-up"
-            className=" fixed top-1/2 w-[65%] md:w-[50%] -translate-y-1/2 p-10 bg-black rounded-2xl items-center left-1/2 -translate-x-1/2  flex flex-col gap-1 z-10"
-          >
-            <IconX
-              stroke={2}
-              color="#faed25"
-              onClick={() => setIsOpen(!isOpen)}
-              className="absolute top-2 size-10 right-2 lg:right-10 lg:top-5 cursor-pointer hover:rotate-90 duration-150 "
-            />
+  const navLinks = [
+    { name: "Events", href: "/events" },
+    { name: "About", href: "/about" },
+    { name: "Virtual", href: "/" },
+    { name: "Contact", href: "/" },
+  ];
+
+  return (
+    <>
+      <div
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? "glass-nav py-4" : "bg-transparent py-6"
+        }`}
+      >
+        <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+          <Link href="/">
+            <div className="relative w-12 h-8 md:w-24 md:h-24 hover:scale-105 transition-transform">
+              <Image src="/vblogo.png" alt="logo" fill className="object-contain" />
+            </div>
+          </Link>
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex gap-10 items-center">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-white font-outfit text-sm uppercase tracking-widest hover:text-neon-yellow transition-colors relative group"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-neon-yellow transition-all group-hover:w-full" />
+              </Link>
+            ))}
             <Link
               href="/events"
-              className="text-bg font-helv text-[40px] lg:text-[80px] font-semibold hover:border-b border-b-bg  "
+              className="bg-neon-yellow text-black font-bold uppercase text-xs px-6 py-3 rounded-full hover:bg-white hover:scale-105 transition-all duration-300"
             >
-              Events
-            </Link>
-            <Link
-              href="/about"
-              className="text-bg font-helv text-[40px] lg:text-[80px] font-semibold hover:border-b border-b-bg "
-            >
-              About
-            </Link>
-            <Link
-              href="/"
-              className="text-bg font-helv text-[40px] lg:text-[80px] font-semibold hover:border-b border-b-bg "
-            >
-              Virtual
-            </Link>
-            <Link
-              href="/"
-              className="text-bg font-helv text-[40px] lg:text-[80px] font-semibold hover:border-b border-b-bg "
-            >
-              Info
+              Get Tickets
             </Link>
           </div>
+
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="text-white hover:text-neon-yellow transition-colors"
+            >
+              <IconMenu2 size={32} />
+            </button>
+          </div>
         </div>
-      )}
-    </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-[60] flex flex-col items-center justify-center transition-all duration-500 ${
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        }`}
+      >
+        <button
+          onClick={() => setIsOpen(false)}
+          className="absolute top-8 right-8 text-white hover:text-neon-yellow transition-colors hover:rotate-90 duration-300"
+        >
+          <IconX size={40} />
+        </button>
+
+        <div className="flex flex-col gap-8 items-center">
+          {navLinks.map((link, index) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="text-white font-outfit font-bold text-4xl uppercase tracking-wider hover:text-neon-yellow transition-all hover:scale-110"
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 

@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
-import { IconLocation, IconMapPin, IconTicket } from "@tabler/icons-react";
 import Link from "next/link";
+import { IconMapPin, IconTicket } from "@tabler/icons-react";
 
 const EventCard = ({
   eventTitle,
@@ -10,67 +9,43 @@ const EventCard = ({
   location,
   ticketLink,
   imageSrc,
-  hideVideo,
 }) => {
-  const [isHovering, setIsHovering] = useState(false);
-  const videoRef = useRef(null);
-  // const imageSrc = "/api/placeholder/400/300";
-  const videoSrc = "your-video-url.mp4";
-
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-
-    if (videoRef.current && hideVideo !== "none") {
-      videoRef.current.play();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
-
   return (
-    <div className="w-fit  ">
-      <div
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="relative w-[342px] h-[400px] "
-      >
-        {/* {isHovering && hideVideo !== "none" ? (
-          <iframe
-            src="https://player.vimeo.com/video/1034774205?muted=1&autoplay=1&controls=0&h=0e505cf1c0&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-            width="342"
-            height="400"
-            title="vogue-vid1"
-          ></iframe>
-        ) : (
-          <Image className="object-fit" src={imageSrc} alt="event image" fill />
-        )} */}
+    <div className="group relative w-full bg-deep-purple/50 rounded-2xl overflow-hidden border border-white/5 hover:border-neon-yellow/50 hover:shadow-[0_0_20px_rgba(250,237,37,0.2)] transition-all duration-300 flex flex-col">
+      {/* Image Container with Hover Zoom */}
+      <div className="relative h-[300px] w-full overflow-hidden">
         <Image
-          className="object-fit hover:scale-105 transition-all duration-200"
-          src={imageSrc}
-          alt="event image"
+          src={imageSrc || "/event-placeholder.jpg"}
+          alt={eventTitle || "Event Image"}
           fill
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
-      </div>
-      <div className="flex mt-4 justify-between">
-        <h3 className="text-white font-semibold">{eventTitle}</h3>
-        <Link href={ticketLink} className="flex cursor-pointer gap-2">
-          <IconTicket stroke={2} color="#faed25" />
-          <p className="text-bg">Ticket</p>
-        </Link>
-      </div>
-      <div className=" flex flex-col gap-0">
-        <p className="text-bg"> {date}</p>
-        <div className="flex justify-between">
-          <p className="text-white"> {location}</p>
-          <IconMapPin stroke={2} color="#faed25" />
+        {/* Date Badge */}
+        <div className="absolute top-4 right-4 bg-neon-yellow text-black px-3 py-1 rounded-lg font-bold font-outfit text-sm shadow-lg">
+          {date || "TBA"}
         </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-6 flex flex-col flex-grow justify-between glass">
+        <div>
+          <h3 className="text-white font-outfit font-bold text-2xl mb-2 line-clamp-1 group-hover:text-neon-yellow transition-colors">
+            {eventTitle || "Upcoming Event"}
+          </h3>
+          <div className="flex items-center gap-2 text-gray-400 mb-6">
+            <IconMapPin size={18} className="text-neon-yellow" />
+            <span className="text-sm font-light tracking-wide">{location || "Secret Location"}</span>
+          </div>
+        </div>
+
+        {/* Action Button */}
+        <Link
+          href={ticketLink || "/"}
+          className="w-full bg-white/10 hover:bg-neon-yellow hover:text-black text-white py-3 rounded-xl font-outfit font-bold text-center uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 group-hover/btn:gap-4"
+        >
+          <IconTicket size={20} />
+          <span>Get Tickets</span>
+        </Link>
       </div>
     </div>
   );

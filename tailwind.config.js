@@ -10,24 +10,28 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        bg: "var(--color-bg)",
+        "neon-yellow": "#FAED25",
+        "deep-purple": "#1a0b2e",
+        "glass-black": "rgba(0, 0, 0, 0.7)",
+        "glass-white": "rgba(255, 255, 255, 0.1)",
       },
       fontFamily: {
-        helv: ["var(--font-helv)"],
+        outfit: ["Outfit", "sans-serif"],
+        helv: ["var(--font-helv)"], // Keeping legacy just in case
       },
-      width: {
-        mobile: "375px",
+      animation: {
+        "fade-in-up": "fadeInUp 0.8s ease-out forwards",
+        "pulse-glow": "pulseGlow 2s infinite",
       },
-      fontSize: {
-        h2: "40px",
-        h3: "30px",
-        h4: "20px",
-        p: "18px",
-      },
-      screens: {
-        sm: "375px",
-        md: "768px",
-        lg: "1024px",
+      keyframes: {
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        pulseGlow: {
+          "0%, 100%": { opacity: "1", boxShadow: "0 0 20px rgba(250, 237, 37, 0.5)" },
+          "50%": { opacity: "0.8", boxShadow: "0 0 30px rgba(250, 237, 37, 0.8)" },
+        },
       },
     },
   },
