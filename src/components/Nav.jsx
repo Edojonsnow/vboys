@@ -40,7 +40,7 @@ const Nav = () => {
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
           <Link href="/">
-            <div className="relative w-12 h-8 md:w-24 md:h-24 hover:scale-105 transition-transform">
+            <div className="relative w-16 h-16 md:w-24 md:h-24 hover:scale-105 transition-transform">
               <Image src="/vblogo.png" alt="logo" fill className="object-contain" />
             </div>
           </Link>

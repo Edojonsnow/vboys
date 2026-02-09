@@ -14,7 +14,7 @@ const Footer = () => {
         
         {/* Brand Area */}
         <div className="text-center md:text-left">
-          <div className="relative w-24 h-12 mb-4 mx-auto md:mx-0">
+          <div className="relative w-24 h-24 mb-4 mx-auto md:mx-0">
             <Image src="/vblogo.svg" alt="vboys logo" fill className="object-contain" />
           </div>
           <p className="text-gray-400 max-w-xs text-sm">

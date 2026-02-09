@@ -55,19 +55,20 @@ const PastCarousel = (props) => {
   ];
 
   return (
-    <section className="embla overflow-hidden w-[350px] md:w-[700px] lg:w-[1060px] mx-auto  relative">
+    <section className="embla overflow-hidden w-full max-w-6xl mx-auto relative px-4">
       <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container flex gap-4">
+        <div className="embla__container flex">
           {events.map((event, index) => (
-            <EventCard
-              key={index}
-              eventTitle={event.title}
-              date={event.date}
-              location={event.location}
-              imageSrc={event.imageSrc}
-              hideVideo={event.hideVideo}
-              ticketLink={event.ticketLink}
-            />
+            <div className="embla__slide flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.33%] min-w-0 pl-4" key={index}>
+              <EventCard
+                eventTitle={event.title}
+                date={event.date}
+                location={event.location}
+                imageSrc={event.imageSrc}
+                hideVideo={event.hideVideo}
+                ticketLink={event.ticketLink}
+              />
+            </div>
           ))}
         </div>
       </div>
