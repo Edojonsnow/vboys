@@ -26,6 +26,7 @@ const Nav = () => {
 
   const navLinks = [
     { name: "Events", href: "/events" },
+    { name: "Archives", href: "/archives" },
     { name: "About", href: "/about" },
     { name: "Virtual", href: "/" },
     { name: "Contact", href: "/" },

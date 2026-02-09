@@ -18,7 +18,7 @@ const Footer = () => {
             <Image src="/vblogo.svg" alt="vboys logo" fill className="object-contain" />
           </div>
           <p className="text-gray-400 max-w-xs text-sm">
-            Curating the best nightlife experiences since 2024. Next generation events for the digital age.
+            Curating the best nightlife experiences since 2019. Next generation events for the digital age.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-20 text-center text-gray-600 text-[10px] uppercase tracking-widest">
-        © 2026 Virtual Boys. All Rights Reserved.
+        © 2026 Vogue Boys. All Rights Reserved.
       </div>
     </footer>
   );
