@@ -25,7 +25,7 @@ const VbVirtual = ({ imageSrc, mobileSrc }) => {
   }, []);
   return (
     <div
-      className={`relative  w-full ${isSmallScreen ? "h-[400px]" : "h-[278px]"}  lg:h-[450px]`}
+      className={`relative  w-full ${isSmallScreen ? "h-[400px]" : "h-[278px]"}  lg:h-[600px]`}
     >
       <Image
         src={isSmallScreen ? mobileSrc : imageSrc}
@@ -34,7 +34,7 @@ const VbVirtual = ({ imageSrc, mobileSrc }) => {
         fill
       />
       <button
-        className={` ${isSmallScreen ? "right-1/2 translate-x-1/2 bottom-1/2" : " right-[16%] bottom-10"} absolute text-sm lg:text-lg bg-bg font-helv px-3 py-2 lg:px-7 lg:py-3   hover:scale-110 hover:bg-black hover:text-bg hover:border hover:border-bg transition-all duration-300   `}
+        className={` ${isSmallScreen ? "right-1/2 translate-x-1/2 bottom-1/2" : " right-[16%] bottom-14"} absolute text-sm text-neon-yellow lg:text-lg bg-black font-helv px-3 py-2 lg:px-7 lg:py-3   hover:scale-110 hover:bg-black hover:text-bg hover:border hover:border-neon-yellow  rounded-md transition-all duration-300   `}
       >
         SUBSCRIBE
       </button>
